@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>JobTrack</h1>
+
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Applications</a>
+            <a href="#">Profile</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h2>Dashboard</h2>
+
+        <div class="stats">
+
+            <div class="card">
+                <h3>Total Applications</h3>
+                <p id="totalCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Interviews</h3>
+                <p id="interviewCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Offers</h3>
+                <p id="offerCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Rejected</h3>
+                <p id="rejectedCount">0</p>
+            </div>
+
+        </div>
+
+        <div class="toolbar">
+
+            <div class="left-tools">
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search company or role..."
+                >
+
+                <select id="filterStatus">
+
+                    <option value="All">All Statuses</option>
+                    <option value="Applied">Applied</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Offer">Offer</option>
+                    <option value="Rejected">Rejected</option>
+
+                </select>
+
+            </div>
+
+            <button id="addApplicationButton" class="primary-btn">
+                + Add Application
+            </button>
+
+        </div>
+
+        <div
+            id="applicationForm"
+            class="card form-card"
+            style="display: none;"
+        >
+
+            <h3 id="formTitle">
+                Add New Application
+            </h3>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Company Name</label>
+
+                    <input
+                        id="companyInput"
+                        type="text"
+                        placeholder="e.g. Microsoft"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Role</label>
+
+                    <input
+                        id="roleInput"
+                        type="text"
+                        placeholder="e.g. Software Engineer"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Status</label>
+
+                    <select id="statusInput">
+                        <option value="Applied">Applied</option>
+                        <option value="Interview">Interview</option>
+                        <option value="Offer">Offer</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Application Date</label>
+
+                    <input
+                        id="dateInput"
+                        type="date"
+                    >
+
+                </div>
+
+                <div class="form-group full-width">
+
+                    <label>Notes</label>
+
+                    <textarea
+                        id="notesInput"
+                        placeholder="Add notes..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+
+                <button
+                    id="saveButton"
+                    class="primary-btn"
+                >
+                    Save Application
+                </button>
+
+                <button
+                    id="cancelButton"
+                    class="secondary-btn"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Company</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="applicationsTableBody"></tbody>
+
+        </table>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
